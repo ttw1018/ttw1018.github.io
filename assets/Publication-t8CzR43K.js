@@ -1,0 +1,1 @@
+import{_ as n,d as c,a as o,o as r}from"./index-ByO7SKRq.js";const _={};function a(e,t){return" Not yet, but perhaps in the future. "}const s=n(_,[["render",a]]),p=c({__name:"Publication",setup(e){return(t,u)=>(r(),o(s))}});export{p as default};
