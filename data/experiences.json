@@ -1,0 +1,21 @@
+[
+  {
+    "jobTitle": "NLP Sotware Engineer",
+    "company": "Meituan(Shanghai)",
+    "timeline": "2024.3 ~ 2024.6",
+    "type": "Intern",
+    "description": [
+      "1. I participated in generating advertisements through LLMs and was responsible for controlling the quality of generated advertisements with model filtering.",
+      "2. I explored the ability of LLMs in the Click-through rate (CTR) task for DianPing and MeiTuan's recommendation system."
+    ]
+  },
+  {
+    "jobTitle": "Computer Vision Software Engineer",
+    "company": "Netease Youdao(Beijing)",
+    "timeline": "2021.7 ~ 2021.11",
+    "type": "Intern",
+    "description": [
+      "I was responsible for the development of some functional modules of the Youdao lamp."
+    ]
+  }
+]
