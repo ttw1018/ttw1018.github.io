@@ -1,0 +1,35 @@
+name: Deploy Vue to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # 替换为你使用的主要分支名称
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # 安装依赖并构建项目
+      - name: Install dependencies and build
+        run: |
+          npm install -g pnpm
+          pnpm install
+          pnpm build
+
+      # 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
