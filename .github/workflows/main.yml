@@ -5,6 +5,9 @@ on:
     branches:
       - master  # 替换为你使用的主要分支名称
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
