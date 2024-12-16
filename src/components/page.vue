@@ -7,10 +7,10 @@
       <el-container class="main-container">
         <el-header class="fixed-header">
           <el-anchor direction="horizontal">
-            <el-anchor-link href="#introduction">introduction</el-anchor-link>
-            <el-anchor-link href="#education" title="education"></el-anchor-link>
-            <el-anchor-link href="#experience" title="experience"></el-anchor-link>
-            <el-anchor-link href="#publications" title="publication"></el-anchor-link>
+            <el-anchor-link href="#introduction" title="Introduction" />
+            <el-anchor-link href="#education" title="Education" />
+            <el-anchor-link href="#experience" title="Experiences" />
+            <el-anchor-link href="#publications" title="Publications" />
           </el-anchor>
         </el-header>
         <el-main class="scroll-main">
@@ -50,4 +50,12 @@ import Support from "./support.vue"
 </script>
 
 
-<style></style>
+<style>
+.el-anchor {
+  --el-anchor-font-size: 20px
+}
+
+.el-anchor__link {
+  color: black
+}
+</style>
