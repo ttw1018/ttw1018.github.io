@@ -56,7 +56,6 @@ import Support from "./support.vue";
 .el-anchor {
   --el-anchor-font-size: 22px;
   --el-anchor-color: black;
-  font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", cursive;
 }
 
 .fixed-aside {
