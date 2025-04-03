@@ -58,7 +58,7 @@ const showside = ref(false);
 const resizeObserver = new ResizeObserver(() => {
   if (asideRef.value && asideRef.value.$el) {
     const width = asideRef.value.$el.getBoundingClientRect().width;
-    if (width > 1500) {
+    if (width > 1300) {
       showside.value = true;
     } else {
       showside.value = false;
@@ -82,7 +82,7 @@ onMounted(() => {
 }
 
 .fixed-aside {
-  width: 15%;
+  width: 280px;
 }
 
 .fixed-header {

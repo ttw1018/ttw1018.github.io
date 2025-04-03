@@ -3,7 +3,6 @@
     <div class="profile-avatar">
       <el-avatar :src="profileData.avatar" :size="150"></el-avatar>
     </div>
-
     <div>
       <H2 class="keep-centre">{{ profileData.name }}</H2>
       <p class="keep-centre">
@@ -29,7 +28,7 @@
         <template #icon>
           <img
             src="/public/img/google-scholar.svg"
-            style="width: 100%; height: 100%; object-fit: contain"
+            style="width: 100%; height: 100%; object-fit: cover"
           />
         </template>
       </el-button>

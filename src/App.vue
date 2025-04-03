@@ -12,5 +12,6 @@ import Page from "./components/page.vue";
 .page {
   font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", cursive;
   font-size: 20px;
+  height: 100%;
 }
 </style>
