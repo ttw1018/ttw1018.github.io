@@ -19,52 +19,77 @@
         {{ profileData.email }}
       </p>
     </div>
-    <div style="display: flex;justify-content: center; align-items: center;">
-      <el-button v-if="profileData['google-scholar']" @click="openLink(profileData['google-scholar'])" circle
-        size="large">
+    <div style="display: flex; justify-content: center; align-items: center">
+      <el-button
+        v-if="profileData['google-scholar']"
+        @click="openLink(profileData['google-scholar'])"
+        circle
+        size="large"
+      >
         <template #icon>
-          <img src="/public/img/google-scholar.svg" style="width: 100%;height: 100%;object-fit: contain">
+          <img
+            src="/public/img/google-scholar.svg"
+            style="width: 100%; height: 100%; object-fit: contain"
+          />
         </template>
       </el-button>
 
-      <el-button v-if="profileData.github" @click="openLink(profileData.github)" circle size="large">
+      <el-button
+        v-if="profileData.github"
+        @click="openLink(profileData.github)"
+        circle
+        size="large"
+      >
         <template #icon>
-          <img src="/public/img/github.svg" style="width: 100%;height: 100%;object-fit:cover">
+          <img
+            src="/public/img/github.svg"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
         </template>
       </el-button>
 
-      <el-button v-if="profileData.linkedin" @click="openLink(profileData.linkedin)" circle size="large">
+      <el-button
+        v-if="profileData.linkedin"
+        @click="openLink(profileData.linkedin)"
+        circle
+        size="large"
+      >
         <template #icon>
-          <img src="/public/img/linkedin.png" style="width: 100%;height: 100%;object-fit:cover">
+          <img
+            src="/public/img/linkedin.png"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
         </template>
       </el-button>
-
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue"
-import { Message, Position } from "@element-plus/icons-vue"
-import axios from "axios"
+import { ref, onMounted } from "vue";
+import { Message, Position } from "@element-plus/icons-vue";
 
-const profileData = ref({})
+const profileData = ref({});
 
 const openLink = (url) => {
   console.log(url);
-  window.open(url, '_blank');
-}
+  window.open(url, "_blank");
+};
 
 function loadProfile() {
-  fetch("data/profile.json").then(r => r.json()).then(data => { profileData.value = data }).catch(error => {
-    console.log(error)
-  })
+  fetch("data/profile.json")
+    .then((r) => r.json())
+    .then((data) => {
+      profileData.value = data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 onMounted(() => {
-  loadProfile()
-}
-)
+  loadProfile();
+});
 </script>
 
 <style>

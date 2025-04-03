@@ -1,13 +1,17 @@
 <template>
   <div>
-    <el-container style="height: 97vh;">
-      <el-aside class="fixed-aside" width="15%">
+    <el-container style="height: 97vh">
+      <el-aside class="fixed-aside">
         <Profile />
       </el-aside>
       <el-container class="main-container">
         <el-header class="fixed-header">
           <el-anchor direction="horizontal">
-            <el-anchor-link href="#introduction" title="Introduction" />
+            <el-anchor-link
+              href="#introduction"
+              title="Introduction"
+              id="anchor"
+            />
             <el-anchor-link href="#education" title="Education" />
             <el-anchor-link href="#experience" title="Experiences" />
             <el-anchor-link href="#publications" title="Publications" />
@@ -40,22 +44,22 @@
 </template>
 
 <script setup>
-import Profile from "./profile.vue"
-import Introduction from './introduction.vue'
+import Profile from "./profile.vue";
+import Introduction from "./introduction.vue";
 import Education from "./education.vue";
-import Experiences from "./experiences.vue"
+import Experiences from "./experiences.vue";
 import Publications from "./publications.vue";
-import Support from "./support.vue"
-
+import Support from "./support.vue";
 </script>
 
-
-<style>
+<style scoped>
 .el-anchor {
-  --el-anchor-font-size: 20px
+  --el-anchor-font-size: 22px;
+  --el-anchor-color: black;
+  font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", cursive;
 }
 
-.el-anchor__link {
-  color: black
+.fixed-aside {
+  width: 15%;
 }
 </style>

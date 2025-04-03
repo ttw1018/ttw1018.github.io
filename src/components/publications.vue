@@ -1,8 +1,5 @@
 <template>
-  <h1>
-    Publications
-  </h1>
-
+  <h1>Publications</h1>
   <el-col :span="24" v-for="pub in publications">
     <el-card width="100%" shadow="hover">
       <h4>
@@ -14,25 +11,26 @@
       </h4>
       <p>{{ pub.authors }}</p>
       <p>{{ pub.venue }}</p>
-
     </el-card>
   </el-col>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref } from "vue";
 
-const publications = ref([])
+const publications = ref([]);
 const load_data = () => {
-  fetch("data/publications.json").then(res => res.json()).then(data => {
-    publications.value = data
-  }).catch(err => {
-    console.error(err)
-  })
-}
+  fetch("data/publications.json")
+    .then((res) => res.json())
+    .then((data) => {
+      publications.value = data;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
 
 onMounted(() => {
-  load_data()
-})
-
+  load_data();
+});
 </script>

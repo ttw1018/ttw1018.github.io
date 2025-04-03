@@ -1,8 +1,5 @@
 <template>
-  <h1>
-    Education
-  </h1>
-
+  <h1>Education</h1>
   <el-col :span="24" v-for="edu in education">
     <el-card width="100%" shadow="hover">
       <div>
@@ -16,26 +13,26 @@
         </h5>
       </div>
     </el-card>
-
   </el-col>
-
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref } from "vue";
 
-const education = ref([])
+const education = ref([]);
 
 const load_data = () => {
-  fetch("data/education.json").then(res => res.json()).then(data => {
-    education.value = data
-  }).catch(err => {
-    console.error(err)
-  })
-}
+  fetch("data/education.json")
+    .then((res) => res.json())
+    .then((data) => {
+      education.value = data;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
 
 onMounted(() => {
-  load_data()
-})
-
+  load_data();
+});
 </script>

@@ -1,13 +1,11 @@
 <template>
-  <h1>
-    Experiences
-  </h1>
-
+  <h1>Experiences</h1>
   <el-col :span="24" v-for="experience in experiences">
     <el-card width="100%" shadow="hover">
       <div>
         <h3>{{ experience.jobTitle }}</h3>
-        <h5>{{ experience.type }}
+        <h5>
+          {{ experience.type }}
           <el-divider direction="vertical" />
           {{ experience.company }}
           <el-divider direction="vertical" />
@@ -19,25 +17,26 @@
       </div>
     </el-card>
   </el-col>
-
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref } from "vue";
 
-const experiences = ref([])
+const experiences = ref([]);
 
 const load_data = () => {
-  fetch("data/experiences.json").then(res => res.json()).then(data => {
-    experiences.value = data
-    // console.log(data)
-  }).catch(err => {
-    console.error(err)
-  })
-}
+  fetch("data/experiences.json")
+    .then((res) => res.json())
+    .then((data) => {
+      experiences.value = data;
+      // console.log(data)
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
 
 onMounted(() => {
-  load_data()
-})
-
+  load_data();
+});
 </script>
