@@ -4,10 +4,10 @@
     <el-card width="100%" shadow="hover">
       <h4>
         {{ pub.title }}
-        <el-divider v-if="pub.link" direction="vertical" />
-        <el-link v-if="pub.link" :href="pub.link">[link]</el-link>
-        <el-divider v-if="pub.code" direction="vertical" />
-        <el-link v-if="pub.code" :href="pub.code">[code]</el-link>
+        <el-divider v-if="pub.link" direction="vertical" class="link" />
+        <el-link v-if="pub.link" :href="pub.link" class="link">[link]</el-link>
+        <el-divider v-if="pub.code" direction="vertical" class="link" />
+        <el-link v-if="pub.code" :href="pub.code" class="link">[code]</el-link>
       </h4>
       <p>{{ pub.authors }}</p>
       <p>{{ pub.venue }}</p>
@@ -34,3 +34,9 @@ onMounted(() => {
   load_data();
 });
 </script>
+
+<style scoped>
+.link {
+  font-size: inherit;
+}
+</style>

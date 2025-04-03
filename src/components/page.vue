@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-container style="height: 97vh">
-      <el-aside class="fixed-aside">
+    <el-container style="height: 97vh" ref="asideRef">
+      <el-aside v-show="showside" class="fixed-aside">
         <Profile />
       </el-aside>
       <el-container class="main-container">
@@ -18,6 +18,8 @@
           </el-anchor>
         </el-header>
         <el-main class="scroll-main">
+          <Profile v-show="!showside" />
+          <el-divider v-show="!showside" border-style="dashed" />
           <div id="introduction">
             <Introduction id="introduction" />
           </div>
@@ -36,8 +38,6 @@
           <el-divider border-style="dashed" />
           <Support />
         </el-main>
-        <!-- <el-footer>
-        </el-footer> -->
       </el-container>
     </el-container>
   </div>
@@ -50,6 +50,29 @@ import Education from "./education.vue";
 import Experiences from "./experiences.vue";
 import Publications from "./publications.vue";
 import Support from "./support.vue";
+import { onMounted, ref, nextTick } from "vue";
+
+const asideRef = ref(null);
+const showside = ref(false);
+
+const resizeObserver = new ResizeObserver(() => {
+  if (asideRef.value && asideRef.value.$el) {
+    const width = asideRef.value.$el.getBoundingClientRect().width;
+    if (width > 1500) {
+      showside.value = true;
+    } else {
+      showside.value = false;
+    }
+  }
+});
+
+onMounted(() => {
+  nextTick(() => {
+    if (asideRef.value && asideRef.value.$el) {
+      resizeObserver.observe(asideRef.value.$el);
+    }
+  });
+});
 </script>
 
 <style scoped>
@@ -60,5 +83,9 @@ import Support from "./support.vue";
 
 .fixed-aside {
   width: 15%;
+}
+
+.fixed-header {
+  height: 30px;
 }
 </style>
