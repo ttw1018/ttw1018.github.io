@@ -28,7 +28,7 @@
         <template #icon>
           <img
             src="/public/img/google-scholar.svg"
-            style="width: 100%; height: 100%; object-fit: cover"
+            style="width: 400%; height: 400%; object-fit: cover"
           />
         </template>
       </el-button>
@@ -42,7 +42,7 @@
         <template #icon>
           <img
             src="/public/img/github.svg"
-            style="width: 100%; height: 100%; object-fit: cover"
+            style="width: 400%; height: 400%; object-fit: cover"
           />
         </template>
       </el-button>
@@ -55,8 +55,8 @@
       >
         <template #icon>
           <img
-            src="/public/img/linkedin.png"
-            style="width: 100%; height: 100%; object-fit: cover"
+            src="/public/img/linkedin.svg"
+            style="width: 400%; height: 400%; object-fit: cover"
           />
         </template>
       </el-button>
@@ -89,6 +89,10 @@ function loadProfile() {
 onMounted(() => {
   loadProfile();
 });
+
+function copy() {
+  console.log("hello");
+}
 </script>
 
 <style>

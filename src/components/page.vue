@@ -58,7 +58,7 @@ const showside = ref(false);
 const resizeObserver = new ResizeObserver(() => {
   if (asideRef.value && asideRef.value.$el) {
     const width = asideRef.value.$el.getBoundingClientRect().width;
-    if (width > 1300) {
+    if (width > 1200) {
       showside.value = true;
     } else {
       showside.value = false;
